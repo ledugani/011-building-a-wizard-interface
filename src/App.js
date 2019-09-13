@@ -18,7 +18,12 @@ class App extends React.Component {
         />
 
       case 'CharacterInfo':
-        return <CharacterInfo />
+        return <CharacterInfo
+          name={this.state.party[this.state.currentSlot].name}
+          handleNameChange={this.handleNameChange}
+          bio={this.state.party[this.state.currentSlot].bio}
+          handleBioChange={this.handleBioChange}
+        />
 
       case 'RollStats':
         return <RollStats />
@@ -33,6 +38,24 @@ class App extends React.Component {
     const player = this.state.party[this.state.currentSlot];
     player.class = klass;
     this.setState({ party, currentStep: 'CharacterInfo' })
+  }
+
+  handleNameChange = (e) => {
+    const party = {...this.state.party};
+    const player = this.state.party[this.state.currentSlot];
+    player.name = e.target.value;
+    this.setState({ party })
+  }
+
+  handleBioChange = (e) => {
+    const party = {...this.state.party};
+    const player = this.state.party[this.state.currentSlot];
+    player.bio = e.target.value;
+    this.setState({ party })
+  }
+
+  handleInfoSave = () => {
+    this.setState({ currentStep: 'RollStats' })
   }
 
   render() {
