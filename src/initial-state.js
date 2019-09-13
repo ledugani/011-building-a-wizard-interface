@@ -5,7 +5,7 @@ const initialState = {
     '0': {
       name: '',
       bio: '',
-      klass: null,
+      class: null,
       attributes: {
         str: null,
         int: null,
@@ -18,7 +18,7 @@ const initialState = {
     '1': {
       name: '',
       bio: '',
-      klass: null,
+      class: null,
       attributes: {
         str: null,
         int: null,
@@ -31,7 +31,7 @@ const initialState = {
     '2': {
       name: '',
       bio: '',
-      klass: null,
+      class: null,
       attributes: {
         str: null,
         int: null,
@@ -44,7 +44,7 @@ const initialState = {
     '3': {
       name: '',
       bio: '',
-      klass: null,
+      class: null,
       attributes: {
         str: null,
         int: null,
@@ -56,3 +56,5 @@ const initialState = {
     },
   }
 }
+
+export default initialState;
