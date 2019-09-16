@@ -23,10 +23,15 @@ class App extends React.Component {
           handleNameChange={this.handleNameChange}
           bio={this.state.party[this.state.currentSlot].bio}
           handleBioChange={this.handleBioChange}
+          handleInfoSave={this.handleInfoSave}
         />
 
       case 'RollStats':
-        return <RollStats />
+        return <RollStats
+          handleRoll={this.handleRoll}
+          handleStatsSave={this.handleStatsSave}
+          {...this.state.party[this.state.currentSlot].attributes}
+        />
 
       default:
         throw("Not a valid step!")
@@ -55,8 +60,35 @@ class App extends React.Component {
   }
 
   handleInfoSave = () => {
+    //this.handleRoll();
     this.setState({ currentStep: 'RollStats' })
   }
+
+  // randomStat = (min, max) => {
+  //   return Math.floor(Math.random() * (max - min + 1)) + min
+  // }
+
+  // handleRoll = () => {
+  //   const party = {...this.state.party};
+  //   const player = party[this.state.currentSlot];
+  //   player.attributes = {
+  //     str: this.randomStat(10, 18),
+  //     int: this.randomStat(10, 18),
+  //     wis: this.randomStat(10, 18),
+  //     dex: this.randomStat(10, 18),
+  //     con: this.randomStat(10, 18),
+  //     cha: this.randomStat(10, 18),
+  //   }
+  //   this.setState({ party })
+  // }
+
+  // handleStatsSave = () => {
+  //   if (this.state.currentSlot < 3) {
+  //     this.setState(prevState => ({ currentStep: 'ClassSelect', currentSlot: prevState.currentSlot+1 }))
+  //   } else {
+  //     this.setState({ currentStep: 'DONE!'})
+  //   }
+  // }
 
   render() {
     return (
