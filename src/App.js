@@ -34,7 +34,7 @@ class App extends React.Component {
         />
 
       default:
-        throw("Not a valid step!")
+        alert("Not a valid step!")
     }
   }
 
