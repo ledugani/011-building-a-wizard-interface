@@ -14,6 +14,12 @@ export default function RollStats(props) {
           <li>CHA: { props.cha }</li>
         </ul>
       </div>
+      <div className='actions'>
+        <button
+          onClick={props.handleRoll}
+        >Roll</button>
+        <button>Save</button>
+      </div>
     </div>
   </div>
 }
