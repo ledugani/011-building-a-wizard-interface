@@ -22,7 +22,9 @@ export default function CharacterInfo(props) {
       </div>
 
       <div className="button">
-        <button>Save</button>
+        <button
+          onClick={props.handleInfoSave}
+        >Save</button>
       </div>
     </div>
   </div>
